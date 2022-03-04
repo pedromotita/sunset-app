@@ -20,7 +20,11 @@ struct MapView: View {
             Map(coordinateRegion: $region).edgesIgnoringSafeArea(.bottom)
             .navigationTitle("Sunset")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                AddButton()
+            }
         }
+        .tint(.red)
     }
 }
 
