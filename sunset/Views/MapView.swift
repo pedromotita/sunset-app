@@ -16,7 +16,15 @@ struct MapView: View {
     )
     
     var body: some View {
-        Map(coordinateRegion: $region).ignoresSafeArea()
+        NavigationView {
+            Map(coordinateRegion: $region).edgesIgnoringSafeArea(.bottom)
+            .navigationTitle("Sunset")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                AddButton()
+            }
+        }
+        .tint(.red)
     }
 }
 
