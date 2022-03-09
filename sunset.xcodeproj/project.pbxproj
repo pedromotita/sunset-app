@@ -12,6 +12,7 @@
 		E83238EB27D27704005913FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83238EA27D27704005913FB /* Preview Assets.xcassets */; };
 		E83238F327D279AF005913FB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83238F227D279AF005913FB /* MapView.swift */; };
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
+		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E83238EA27D27704005913FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83238F227D279AF005913FB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		E83238E227D27702005913FB /* sunset */ = {
 			isa = PBXGroup;
 			children = (
+				E8FF0C9527D7DF03008920D2 /* Models */,
 				E8DB5CDE27D291B000D730C3 /* Components */,
 				E83238F127D2799D005913FB /* Views */,
 				E83238E327D27702005913FB /* sunsetApp.swift */,
@@ -92,6 +95,14 @@
 				E8DB5CE027D291F700D730C3 /* AddButton.swift */,
 			);
 			path = NavigationItems;
+			sourceTree = "<group>";
+		};
+		E8FF0C9527D7DF03008920D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF0C9627D7DF15008920D2 /* Sunset.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */,
+				E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */,
 				E83238F327D279AF005913FB /* MapView.swift in Sources */,
 				E83238E427D27702005913FB /* sunsetApp.swift in Sources */,
 			);
