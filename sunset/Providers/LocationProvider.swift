@@ -12,42 +12,59 @@ import MapKit
 class LocationProvider: NSObject {
     
     private let locationManager: CLLocationManager
-    private var mostRecentLocation: CLLocationCoordinate2D?
-    private let defatulLocation = CLLocationCoordinate2D(latitude: -22.8124197, longitude: -47.0626637)
     
+    public var delegate: LocationProviderDelegate?
+        
     override init() {
         self.locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
     }
     
-    public func getUserRegion() -> MKCoordinateRegion {
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        if let coordinate = self.locationManager.location?.coordinate {
-            return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
+    private func requestUserLocation() {
+        self.locationManager.requestLocation()
+    }
+    
+    public func checkAuthorizationStatus() {
+        switch locationManager.authorizationStatus {
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .restricted:
+                print("location restricted")
+            case .denied:
+                print("location denied")
+            case .authorizedAlways:
+                print("authorized a")
+            case .authorizedWhenInUse:
+                self.requestUserLocation()
+            @unknown default:
+                break
         }
-        
-        return MKCoordinateRegion(center: self.defatulLocation, span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
-        
     }
 }
 
 extension LocationProvider: CLLocationManagerDelegate {
     
-//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//        <#code#>
-//    }
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        self.checkAuthorizationStatus()
+    }
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let coordinate = locations.first?.coordinate {
-//            self.mostRecentLocation = coordinate
-//        }
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print(error)
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        
+        if let delegate = self.delegate {
+            delegate.didUpdateLocation(with: location.coordinate)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+}
 
+protocol LocationProviderDelegate: AnyObject {
+    
+    func didUpdateLocation(with lastLocation: CLLocationCoordinate2D)
+    
 }

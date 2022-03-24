@@ -24,7 +24,7 @@ struct MapView: View {
         }
         .accentColor(.red)
         .onAppear {
-            mapViewModel.checkIfLocationServiceIsEnabled()
+            mapViewModel.checkLocationAuthorization()
         }
     }
 }
