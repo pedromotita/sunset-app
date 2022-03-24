@@ -13,7 +13,7 @@ class LocationProvider: NSObject {
     
     private let locationManager: CLLocationManager
     private var mostRecentLocation: CLLocationCoordinate2D?
-    private let defatulLocation = CLLocationCoordinate2D(latitude: -22.8045260, longitude: -47.0812497)
+    private let defatulLocation = CLLocationCoordinate2D(latitude: -22.8124197, longitude: -47.0626637)
     
     override init() {
         self.locationManager = CLLocationManager()
@@ -23,27 +23,31 @@ class LocationProvider: NSObject {
     
     public func getUserRegion() -> MKCoordinateRegion {
         
-        locationManager.requestLocation()
+        locationManager.requestWhenInUseAuthorization()
         
         if let coordinate = self.locationManager.location?.coordinate {
-            return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+            return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
         }
         
-        return MKCoordinateRegion(center: self.defatulLocation, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7))
+        return MKCoordinateRegion(center: self.defatulLocation, span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
         
     }
 }
 
 extension LocationProvider: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coordinate = locations.first?.coordinate {
-            self.mostRecentLocation = coordinate
-        }
-    }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        <#code#>
+//    }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let coordinate = locations.first?.coordinate {
+//            self.mostRecentLocation = coordinate
+//        }
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//        print(error)
+//    }
+
 }

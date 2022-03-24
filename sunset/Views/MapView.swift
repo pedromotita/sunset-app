@@ -10,11 +10,11 @@ import MapKit
 
 struct MapView: View {
     
-    @ObservedObject var mapViewModel = MapViewModel()
+    @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
         NavigationView {
-            Map(coordinateRegion: $mapViewModel.region)
+            Map(coordinateRegion: $mapViewModel.region, showsUserLocation: true)
                 .edgesIgnoringSafeArea(.bottom)
             .navigationTitle("Sunset")
             .navigationBarTitleDisplayMode(.inline)
@@ -22,7 +22,10 @@ struct MapView: View {
                 AddButton()
             }
         }
-        .tint(.red)
+        .accentColor(.red)
+        .onAppear {
+            mapViewModel.checkIfLocationServiceIsEnabled()
+        }
     }
 }
 
