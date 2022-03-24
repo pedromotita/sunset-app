@@ -10,21 +10,22 @@ import MapKit
 
 struct MapView: View {
     
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: -22.8045260, longitude: -47.0812497),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
+    @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
         NavigationView {
-            Map(coordinateRegion: $region).edgesIgnoringSafeArea(.bottom)
+            Map(coordinateRegion: $mapViewModel.region, showsUserLocation: true)
+                .edgesIgnoringSafeArea(.bottom)
             .navigationTitle("Sunset")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 AddButton()
             }
         }
-        .tint(.red)
+        .accentColor(.red)
+        .onAppear {
+            mapViewModel.checkLocationAuthorization()
+        }
     }
 }
 
