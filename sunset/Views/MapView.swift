@@ -22,11 +22,7 @@ struct MapView: View {
                 annotationItems: sunsets
             ) { sunset in
                 MapAnnotation(coordinate: sunset.location) {
-                    Circle()
-                        .foregroundColor(.red)
-                        .onTapGesture {
-                            print("tapped")
-                        }
+                    SunsetMapAnnotation()
                 }
             }
             .edgesIgnoringSafeArea(.bottom)
