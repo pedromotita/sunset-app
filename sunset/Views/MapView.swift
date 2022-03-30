@@ -10,17 +10,15 @@ import MapKit
 
 struct MapView: View {
     
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: -22.8045260, longitude: -47.0812497),
-        span: MKCoordinateSpan(latitudeDelta: 0.8, longitudeDelta: 0.8)
-    )
+    @StateObject var mapViewModel = MapViewModel()
     
     private var sunsets = [Sunset(location: CLLocationCoordinate2D(latitude: -22.8318632, longitude: -47.0605383))]
     
     var body: some View {
         NavigationView {
             Map(
-                coordinateRegion: $region,
+                coordinateRegion: $mapViewModel.region,
+                showsUserLocation: true,
                 annotationItems: sunsets
             ) { sunset in
                 MapAnnotation(coordinate: sunset.location) {
@@ -38,7 +36,10 @@ struct MapView: View {
                 AddButton()
             }
         }
-        .tint(.red)
+        .accentColor(.red)
+        .onAppear {
+            mapViewModel.checkLocationAuthorization()
+        }
     }
 }
 

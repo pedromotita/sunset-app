@@ -11,6 +11,9 @@
 		E83238E827D27704005913FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83238E727D27704005913FB /* Assets.xcassets */; };
 		E83238EB27D27704005913FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83238EA27D27704005913FB /* Preview Assets.xcassets */; };
 		E83238F327D279AF005913FB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83238F227D279AF005913FB /* MapView.swift */; };
+		E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E841C53F27D64F77003AB5CC /* LocationProvider.swift */; };
+		E841C54327D65727003AB5CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E841C54227D65727003AB5CC /* MapViewModel.swift */; };
+		E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */; };
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
 		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
 /* End PBXBuildFile section */
@@ -21,6 +24,9 @@
 		E83238E727D27704005913FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83238EA27D27704005913FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83238F227D279AF005913FB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E841C53F27D64F77003AB5CC /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		E841C54227D65727003AB5CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,7 +63,11 @@
 			children = (
 				E8FF0C9527D7DF03008920D2 /* Models */,
 				E8DB5CDE27D291B000D730C3 /* Components */,
+				E8BFE9EE27ED0DD0006E5C03 /* UIKit */,
 				E83238F127D2799D005913FB /* Views */,
+				E841C54127D6571A003AB5CC /* ViewModels */,
+				E841C53E27D64F61003AB5CC /* Providers */,
+				E8DB5CDE27D291B000D730C3 /* Components */,
 				E83238E327D27702005913FB /* sunsetApp.swift */,
 				E83238E727D27704005913FB /* Assets.xcassets */,
 				E83238E927D27704005913FB /* Preview Content */,
@@ -79,6 +89,30 @@
 				E83238F227D279AF005913FB /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E841C53E27D64F61003AB5CC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E841C53F27D64F77003AB5CC /* LocationProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		E841C54127D6571A003AB5CC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E841C54227D65727003AB5CC /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E8BFE9EE27ED0DD0006E5C03 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		E8DB5CDE27D291B000D730C3 /* Components */ = {
@@ -177,7 +211,10 @@
 			files = (
 				E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */,
 				E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */,
+				E841C54327D65727003AB5CC /* MapViewModel.swift in Sources */,
+				E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */,
 				E83238F327D279AF005913FB /* MapView.swift in Sources */,
+				E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */,
 				E83238E427D27702005913FB /* sunsetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,11 +349,14 @@
 				DEVELOPMENT_TEAM = W989F39VWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Aceitas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,11 +381,14 @@
 				DEVELOPMENT_TEAM = W989F39VWK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Aceitas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
