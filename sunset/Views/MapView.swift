@@ -23,6 +23,9 @@ struct MapView: View {
             ) { sunset in
                 MapAnnotation(coordinate: sunset.location) {
                     SunsetMapAnnotation()
+                        .onTapGesture {
+                            print("Implement SunsetMapAnnotation tap gesture")
+                        }
                 }
             }
             .edgesIgnoringSafeArea(.bottom)
