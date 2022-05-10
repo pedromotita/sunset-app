@@ -9,14 +9,13 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class LocationProvider: NSObject {
+class LocationProvider: NSObject, ObservableObject {
     
-    private let locationManager: CLLocationManager
+    @Published public var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -22.813, longitude: -47.060), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
-    public var delegate: LocationProviderDelegate?
+    private let locationManager = CLLocationManager()
         
     override init() {
-        self.locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
     }
@@ -51,20 +50,10 @@ extension LocationProvider: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
-        
-        if let delegate = self.delegate {
-            delegate.didUpdateLocation(with: location.coordinate)
-        }
+        self.region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-    
-}
-
-protocol LocationProviderDelegate: AnyObject {
-    
-    func didUpdateLocation(with lastLocation: CLLocationCoordinate2D)
-    
 }

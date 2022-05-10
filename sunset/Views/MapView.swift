@@ -9,15 +9,15 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    
-    @StateObject var mapViewModel = MapViewModel()
+
+    @StateObject var locationProvider = LocationProvider()
     
     private var sunsets = [Sunset(location: CLLocationCoordinate2D(latitude: -22.8318632, longitude: -47.0605383))]
     
     var body: some View {
         NavigationView {
             Map(
-                coordinateRegion: $mapViewModel.region,
+                coordinateRegion: $locationProvider.region,
                 showsUserLocation: true,
                 annotationItems: sunsets
             ) { sunset in
@@ -37,7 +37,7 @@ struct MapView: View {
         }
         .accentColor(.red)
         .onAppear {
-            mapViewModel.checkLocationAuthorization()
+            locationProvider.checkAuthorizationStatus()
         }
     }
 }
