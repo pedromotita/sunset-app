@@ -15,6 +15,7 @@
 		E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */; };
 		E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */; };
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
+		E8FA3A37282AA21800D8A5FC /* SunsetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */; };
 		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetMapAnnotation.swift; sourceTree = "<group>"; };
 		E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetDetailView.swift; sourceTree = "<group>"; };
 		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				E83238F227D279AF005913FB /* MapView.swift */,
+				E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */,
+				E8FA3A37282AA21800D8A5FC /* SunsetDetailView.swift in Sources */,
 				E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */,
 				E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */,
 				E83238F327D279AF005913FB /* MapView.swift in Sources */,
