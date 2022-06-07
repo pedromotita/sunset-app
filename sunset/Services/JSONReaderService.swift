@@ -26,7 +26,8 @@ class JSONReaderService {
                 print(error)
                 completion(.failure(.UnkownError))
             }
+        } else {
+            completion(.failure(.JSONNotFound))
         }
-        completion(.failure(.JSONNotFound))
     }
 }

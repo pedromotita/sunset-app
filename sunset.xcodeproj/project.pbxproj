@@ -15,6 +15,7 @@
 		E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */; };
 		E862B311284F77CE004B7EAF /* sunsetData.json in Resources */ = {isa = PBXBuildFile; fileRef = E862B310284F77CE004B7EAF /* sunsetData.json */; };
 		E862B314284F7C90004B7EAF /* JSONReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862B313284F7C90004B7EAF /* JSONReaderService.swift */; };
+		E862B317284F879D004B7EAF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862B316284F879D004B7EAF /* MapViewModel.swift */; };
 		E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */; };
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
 		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
@@ -30,6 +31,7 @@
 		E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetMapAnnotation.swift; sourceTree = "<group>"; };
 		E862B310284F77CE004B7EAF /* sunsetData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sunsetData.json; sourceTree = "<group>"; };
 		E862B313284F7C90004B7EAF /* JSONReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderService.swift; sourceTree = "<group>"; };
+		E862B316284F879D004B7EAF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		E83238E227D27702005913FB /* sunset */ = {
 			isa = PBXGroup;
 			children = (
+				E862B315284F8777004B7EAF /* ViewModel */,
 				E862B312284F7C4B004B7EAF /* Services */,
 				E862B30F284F7640004B7EAF /* Mocks */,
 				E8FF0C9527D7DF03008920D2 /* Models */,
@@ -117,6 +120,14 @@
 				E862B313284F7C90004B7EAF /* JSONReaderService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E862B315284F8777004B7EAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E862B316284F879D004B7EAF /* MapViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E8BFE9EE27ED0DD0006E5C03 /* UIKit */ = {
@@ -231,6 +242,7 @@
 				E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */,
 				E83238E427D27702005913FB /* sunsetApp.swift in Sources */,
 				E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */,
+				E862B317284F879D004B7EAF /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
