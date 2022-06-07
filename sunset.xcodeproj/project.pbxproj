@@ -67,14 +67,11 @@
 		E83238E227D27702005913FB /* sunset */ = {
 			isa = PBXGroup;
 			children = (
+				E862B318284F8DD0004B7EAF /* Utils */,
 				E862B315284F8777004B7EAF /* ViewModel */,
 				E862B312284F7C4B004B7EAF /* Services */,
-				E862B30F284F7640004B7EAF /* Mocks */,
 				E8FF0C9527D7DF03008920D2 /* Models */,
-				E8BFE9EE27ED0DD0006E5C03 /* UIKit */,
 				E83238F127D2799D005913FB /* Views */,
-				E841C53E27D64F61003AB5CC /* Providers */,
-				E8DB5CDE27D291B000D730C3 /* Components */,
 				E83238E327D27702005913FB /* sunsetApp.swift */,
 				E83238E727D27704005913FB /* Assets.xcassets */,
 				E83238E927D27704005913FB /* Preview Content */,
@@ -98,14 +95,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E841C53E27D64F61003AB5CC /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				E841C53F27D64F77003AB5CC /* LocationProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
 		E862B30F284F7640004B7EAF /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E862B313284F7C90004B7EAF /* JSONReaderService.swift */,
+				E841C53F27D64F77003AB5CC /* LocationProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +118,16 @@
 				E862B316284F879D004B7EAF /* MapViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E862B318284F8DD0004B7EAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E862B30F284F7640004B7EAF /* Mocks */,
+				E8DB5CDE27D291B000D730C3 /* Components */,
+				E8BFE9EE27ED0DD0006E5C03 /* UIKit */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E8BFE9EE27ED0DD0006E5C03 /* UIKit */ = {
