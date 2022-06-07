@@ -11,17 +11,16 @@ import MapKit
 struct MapView: View {
 
     @StateObject var locationProvider = LocationProvider()
-    
-    private var sunsets = [Sunset(location: CLLocationCoordinate2D(latitude: -22.8318632, longitude: -47.0605383))]
+    @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
         NavigationView {
             Map(
                 coordinateRegion: $locationProvider.region,
                 showsUserLocation: true,
-                annotationItems: sunsets
+                annotationItems: mapViewModel.sunsets
             ) { sunset in
-                MapAnnotation(coordinate: sunset.location) {
+                MapAnnotation(coordinate: sunset.location.coordinate) {
                     SunsetMapAnnotation()
                         .onTapGesture {
                             print("Implement SunsetMapAnnotation tap gesture")
@@ -38,6 +37,7 @@ struct MapView: View {
         .accentColor(.red)
         .onAppear {
             locationProvider.checkAuthorizationStatus()
+            mapViewModel.loadSunsets()
         }
     }
 }

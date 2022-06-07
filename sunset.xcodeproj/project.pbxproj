@@ -13,6 +13,9 @@
 		E83238F327D279AF005913FB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83238F227D279AF005913FB /* MapView.swift */; };
 		E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E841C53F27D64F77003AB5CC /* LocationProvider.swift */; };
 		E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */; };
+		E862B311284F77CE004B7EAF /* sunsetData.json in Resources */ = {isa = PBXBuildFile; fileRef = E862B310284F77CE004B7EAF /* sunsetData.json */; };
+		E862B314284F7C90004B7EAF /* JSONReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862B313284F7C90004B7EAF /* JSONReaderService.swift */; };
+		E862B317284F879D004B7EAF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862B316284F879D004B7EAF /* MapViewModel.swift */; };
 		E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */; };
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
 		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
@@ -26,6 +29,9 @@
 		E83238F227D279AF005913FB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E841C53F27D64F77003AB5CC /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetMapAnnotation.swift; sourceTree = "<group>"; };
+		E862B310284F77CE004B7EAF /* sunsetData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sunsetData.json; sourceTree = "<group>"; };
+		E862B313284F7C90004B7EAF /* JSONReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderService.swift; sourceTree = "<group>"; };
+		E862B316284F879D004B7EAF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E8BFE9EF27ED0E10006E5C03 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
@@ -61,12 +67,11 @@
 		E83238E227D27702005913FB /* sunset */ = {
 			isa = PBXGroup;
 			children = (
+				E862B318284F8DD0004B7EAF /* Utils */,
+				E862B315284F8777004B7EAF /* ViewModel */,
+				E862B312284F7C4B004B7EAF /* Services */,
 				E8FF0C9527D7DF03008920D2 /* Models */,
-				E8BFE9EE27ED0DD0006E5C03 /* UIKit */,
 				E83238F127D2799D005913FB /* Views */,
-				E841C54127D6571A003AB5CC /* ViewModels */,
-				E841C53E27D64F61003AB5CC /* Providers */,
-				E8DB5CDE27D291B000D730C3 /* Components */,
 				E83238E327D27702005913FB /* sunsetApp.swift */,
 				E83238E727D27704005913FB /* Assets.xcassets */,
 				E83238E927D27704005913FB /* Preview Content */,
@@ -90,19 +95,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E841C53E27D64F61003AB5CC /* Providers */ = {
+		E862B30F284F7640004B7EAF /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				E841C53F27D64F77003AB5CC /* LocationProvider.swift */,
+				E862B310284F77CE004B7EAF /* sunsetData.json */,
 			);
-			path = Providers;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
-		E841C54127D6571A003AB5CC /* ViewModels */ = {
+		E862B312284F7C4B004B7EAF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E862B313284F7C90004B7EAF /* JSONReaderService.swift */,
+				E841C53F27D64F77003AB5CC /* LocationProvider.swift */,
 			);
-			path = ViewModels;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E862B315284F8777004B7EAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E862B316284F879D004B7EAF /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E862B318284F8DD0004B7EAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E862B30F284F7640004B7EAF /* Mocks */,
+				E8DB5CDE27D291B000D730C3 /* Components */,
+				E8BFE9EE27ED0DD0006E5C03 /* UIKit */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E8BFE9EE27ED0DD0006E5C03 /* UIKit */ = {
@@ -198,6 +223,7 @@
 			files = (
 				E83238EB27D27704005913FB /* Preview Assets.xcassets in Resources */,
 				E83238E827D27704005913FB /* Assets.xcassets in Resources */,
+				E862B311284F77CE004B7EAF /* sunsetData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,9 +238,11 @@
 				E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */,
 				E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */,
 				E83238F327D279AF005913FB /* MapView.swift in Sources */,
+				E862B314284F7C90004B7EAF /* JSONReaderService.swift in Sources */,
 				E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */,
 				E83238E427D27702005913FB /* sunsetApp.swift in Sources */,
 				E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */,
+				E862B317284F879D004B7EAF /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
