@@ -11,10 +11,14 @@ class MapViewModel: ObservableObject {
     
     @Published var sunsets: [Sunset] = []
     
-    private let jsonReader = JSONReaderService()
+    private let sunsetProvider: SunsetProvider
+    
+    init() {
+        self.sunsetProvider = JSONReaderService()
+    }
     
     func loadSunsets() {
-        jsonReader.fetchFromLocalFile { [weak self] result in
+        sunsetProvider.fetchSunsets { [weak self] result in
             guard let self = self else { return }
             
             switch result {
