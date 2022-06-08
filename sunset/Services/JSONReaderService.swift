@@ -7,16 +7,20 @@
 
 import Foundation
 
-enum JSONReaderError: Error {
+enum FetchSunsetError: Error {
     case JSONNotFound
     case UnkownError
 }
 
-class JSONReaderService {
+protocol SunsetProvider {
+    func fetchSunsets(completion: (Result<[Sunset], FetchSunsetError>) -> Void)
+}
+
+class JSONReaderService: SunsetProvider {
     
     private let jsonFile = "sunsetData"
     
-    func fetchFromLocalFile(completion: (Result<[Sunset], JSONReaderError>)->Void) {
+    func fetchSunsets(completion: (Result<[Sunset], FetchSunsetError>)->Void) {
         if let fileUrl = Bundle.main.url(forResource: self.jsonFile, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: fileUrl)
