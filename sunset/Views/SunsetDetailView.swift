@@ -48,8 +48,8 @@ struct SunsetDetailView_Previews: PreviewProvider {
             .sheetModal(showSheet: .constant(true)) {
                 SunsetDetailView(
                     sunset: Sunset(
-                        id: UUID(),
-                        location: CLLocationCoordinate2D(latitude: -22.8318632, longitude: -47.0605383),
+                        id: 0,
+                        location: Coordinate(latitude: -22.8318632, longitude: -47.0605383),
                         title: "Por do Sol na Unicamp"
                     )
                 )

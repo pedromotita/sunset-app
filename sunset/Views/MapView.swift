@@ -12,23 +12,16 @@ struct MapView: View {
 
     @StateObject var locationProvider = LocationProvider()
     @State var showSunsetDetail = false
-    
-    private var sunsets = [
-        Sunset(
-            id: UUID(),
-            location: CLLocationCoordinate2D(latitude: -22.8318632, longitude: -47.0605383),
-            title: "Por do Sol na Unicamp"
-        )
-    ]
+    @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
         NavigationView {
             Map(
                 coordinateRegion: $locationProvider.region,
                 showsUserLocation: true,
-                annotationItems: sunsets
+                annotationItems: mapViewModel.sunsets
             ) { sunset in
-                MapAnnotation(coordinate: sunset.location) {
+                MapAnnotation(coordinate: sunset.location.coordinate) {
                     SunsetMapAnnotation()
                         .onTapGesture {
                             showSunsetDetail.toggle()
@@ -45,9 +38,10 @@ struct MapView: View {
         .accentColor(.red)
         .onAppear {
             locationProvider.checkAuthorizationStatus()
+            mapViewModel.loadSunsets()
         }
         .sheetModal(showSheet: $showSunsetDetail) {
-            SunsetDetailView(sunset: sunsets[0])
+            SunsetDetailView(sunset: mapViewModel.sunsets[0])
         }
     }
 }
