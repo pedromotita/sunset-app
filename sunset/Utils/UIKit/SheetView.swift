@@ -11,7 +11,7 @@ import UIKit
 
 extension View {
     
-    func sheetModal<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping () -> SheetView) -> some View {
+    func sheetModal<SheetView: View>(_ showSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping () -> SheetView) -> some View {
         return self.background(
             HalfSheetHelper(sheetView: sheetView(), showSheet: showSheet)
         )

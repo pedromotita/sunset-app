@@ -10,6 +10,7 @@ import Foundation
 class MapViewModel: ObservableObject {
     
     @Published var sunsets: [Sunset] = []
+    @Published var selectedSunset: Sunset?
     
     private let sunsetProvider: SunsetProvider
     
@@ -27,5 +28,4 @@ class MapViewModel: ObservableObject {
             }
         }
     }
-    
 }

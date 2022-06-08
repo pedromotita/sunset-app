@@ -45,7 +45,7 @@ struct SunsetDetailView: View {
 struct SunsetDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Text("Hello World")
-            .sheetModal(showSheet: .constant(true)) {
+            .sheetModal(.constant(true)) {
                 SunsetDetailView(
                     sunset: Sunset(
                         id: 0,

@@ -25,6 +25,7 @@ struct MapView: View {
                     SunsetMapAnnotation()
                         .onTapGesture {
                             showSunsetDetail.toggle()
+                            mapViewModel.selectedSunset = sunset
                         }
                 }
             }
@@ -40,8 +41,8 @@ struct MapView: View {
             locationProvider.checkAuthorizationStatus()
             mapViewModel.loadSunsets()
         }
-        .sheetModal(showSheet: $showSunsetDetail) {
-            SunsetDetailView(sunset: mapViewModel.sunsets[0])
+        .sheetModal($showSunsetDetail) {
+            SunsetDetailView(sunset: mapViewModel.selectedSunset ?? Sunset.empty)
         }
     }
 }
