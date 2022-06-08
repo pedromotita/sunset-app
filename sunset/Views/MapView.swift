@@ -12,6 +12,7 @@ struct MapView: View {
 
     @StateObject var locationProvider = LocationProvider()
     @State var showSunsetDetail = false
+    @State var showAddSunsetSheet = false
     @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
@@ -33,16 +34,21 @@ struct MapView: View {
             .navigationTitle("Sunset")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                AddButton()
+                AddButton {
+                    showAddSunsetSheet.toggle()
+                }
             }
         }
         .accentColor(.red)
-        .onAppear {
-            locationProvider.checkAuthorizationStatus()
-            mapViewModel.loadSunsets()
+        .sheet(isPresented: $showAddSunsetSheet) {
+            AddSunsetView()
         }
         .sheetModal($showSunsetDetail) {
             SunsetDetailView(sunset: mapViewModel.selectedSunset ?? Sunset.empty)
+        }
+        .onAppear {
+            locationProvider.checkAuthorizationStatus()
+            mapViewModel.loadSunsets()
         }
     }
 }

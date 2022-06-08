@@ -8,9 +8,9 @@
 import CoreLocation
 
 struct Sunset: Identifiable, Codable {
-    let id: Int
-    let location: Coordinate
-    let title: String
+    var id: Int
+    var location: Coordinate
+    var title: String
 }
 
 extension Sunset {
@@ -20,8 +20,8 @@ extension Sunset {
 }
 
 struct Coordinate: Codable {
-    let latitude: Double
-    let longitude: Double
+    var latitude: Double
+    var longitude: Double
 }
 
 extension Coordinate {

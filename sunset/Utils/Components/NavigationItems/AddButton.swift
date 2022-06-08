@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AddButton: View {
+    
+    var action: ()->Void
+    
     var body: some View {
         Button {
-            print("Add button tapped")
+            action()
         } label: {
             Label("Add button", systemImage: "plus")
         }
@@ -19,6 +22,6 @@ struct AddButton: View {
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton()
+        AddButton(action: {})
     }
 }

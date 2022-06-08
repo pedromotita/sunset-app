@@ -20,6 +20,8 @@
 		E8DB5CE127D291F700D730C3 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DB5CE027D291F700D730C3 /* AddButton.swift */; };
 		E8FA3A37282AA21800D8A5FC /* SunsetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */; };
 		E8FF0C9727D7DF15008920D2 /* Sunset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF0C9627D7DF15008920D2 /* Sunset.swift */; };
+		E8FF74852850D58F000155BA /* AddSunsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF74842850D58F000155BA /* AddSunsetView.swift */; };
+		E8FF74872850E70C000155BA /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF74862850E70C000155BA /* LargeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		E8DB5CE027D291F700D730C3 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetDetailView.swift; sourceTree = "<group>"; };
 		E8FF0C9627D7DF15008920D2 /* Sunset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunset.swift; sourceTree = "<group>"; };
+		E8FF74842850D58F000155BA /* AddSunsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSunsetView.swift; sourceTree = "<group>"; };
+		E8FF74862850E70C000155BA /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +73,13 @@
 		E83238E227D27702005913FB /* sunset */ = {
 			isa = PBXGroup;
 			children = (
-				E862B318284F8DD0004B7EAF /* Utils */,
+				E83238F127D2799D005913FB /* Views */,
 				E862B315284F8777004B7EAF /* ViewModel */,
 				E862B312284F7C4B004B7EAF /* Services */,
 				E8FF0C9527D7DF03008920D2 /* Models */,
-				E83238F127D2799D005913FB /* Views */,
 				E83238E327D27702005913FB /* sunsetApp.swift */,
 				E83238E727D27704005913FB /* Assets.xcassets */,
+				E862B318284F8DD0004B7EAF /* Utils */,
 				E83238E927D27704005913FB /* Preview Content */,
 			);
 			path = sunset;
@@ -94,6 +98,7 @@
 			children = (
 				E83238F227D279AF005913FB /* MapView.swift */,
 				E8FA3A36282AA21800D8A5FC /* SunsetDetailView.swift */,
+				E8FF74842850D58F000155BA /* AddSunsetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				E8DB5CDF27D291DC00D730C3 /* NavigationItems */,
 				E85C6F1227F5077300107364 /* SunsetMapAnnotation.swift */,
+				E8FF74862850E70C000155BA /* LargeButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -243,10 +249,12 @@
 				E841C54027D64F77003AB5CC /* LocationProvider.swift in Sources */,
 				E83238F327D279AF005913FB /* MapView.swift in Sources */,
 				E862B314284F7C90004B7EAF /* JSONReaderService.swift in Sources */,
+				E8FF74852850D58F000155BA /* AddSunsetView.swift in Sources */,
 				E8BFE9F027ED0E10006E5C03 /* SheetView.swift in Sources */,
 				E83238E427D27702005913FB /* sunsetApp.swift in Sources */,
 				E85C6F1327F5077300107364 /* SunsetMapAnnotation.swift in Sources */,
 				E862B317284F879D004B7EAF /* MapViewModel.swift in Sources */,
+				E8FF74872850E70C000155BA /* LargeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
