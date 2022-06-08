@@ -11,6 +11,7 @@ import MapKit
 struct MapView: View {
 
     @StateObject var locationProvider = LocationProvider()
+    @State var showSunsetDetail = false
     @StateObject var mapViewModel = MapViewModel()
     
     var body: some View {
@@ -23,7 +24,8 @@ struct MapView: View {
                 MapAnnotation(coordinate: sunset.location.coordinate) {
                     SunsetMapAnnotation()
                         .onTapGesture {
-                            print("Implement SunsetMapAnnotation tap gesture")
+                            showSunsetDetail.toggle()
+                            mapViewModel.selectedSunset = sunset
                         }
                 }
             }
@@ -38,6 +40,9 @@ struct MapView: View {
         .onAppear {
             locationProvider.checkAuthorizationStatus()
             mapViewModel.loadSunsets()
+        }
+        .sheetModal($showSunsetDetail) {
+            SunsetDetailView(sunset: mapViewModel.selectedSunset ?? Sunset.empty)
         }
     }
 }

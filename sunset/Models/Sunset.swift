@@ -13,6 +13,12 @@ struct Sunset: Identifiable, Codable {
     let title: String
 }
 
+extension Sunset {
+    static var empty: Sunset {
+        return Sunset(id: 0, location: Coordinate(latitude: 0.0, longitude: 0.0), title: "")
+    }
+}
+
 struct Coordinate: Codable {
     let latitude: Double
     let longitude: Double
